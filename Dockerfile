@@ -1,12 +1,12 @@
 #--------- Generic stuff all our Dockerfiles should start with so we get caching ------------
-ARG IMAGE_VERSION=8.0-jre8
+ARG IMAGE_VERSION=9-jre8
 
 FROM tomcat:$IMAGE_VERSION
 
 MAINTAINER Tim Sutton<tim@linfiniti.com>
 
 ## The Geoserver version
-ARG GS_VERSION=2.13.0
+ARG GS_VERSION=2.14.2
 
 ## Would you like to use Oracle JDK
 ARG ORACLE_JDK=false
@@ -56,7 +56,7 @@ ENV \
        #-XX:+UseConcMarkSweepGC use this rather than parallel GC?
     ## Unset Java related ENVs since they may change with Oracle JDK
     JAVA_VERSION= \
-    JAVA_DEBIAN_VERSION= 
+    JAVA_DEBIAN_VERSION=
 
 WORKDIR /scripts
 
